@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calTriArea(s1, s2, s3){
+            const S=(s1+s2+s3)/2;
+            const area=Math.sqrt(S*(S-s1)*(S-s2)*(S-s3));
+            return area;
+        }
+        const S1=5;
+        const S2=6;
+        const S3=7;
+        let triArea=calTriArea(S1, S2, S3);
+        console.log('The area of the trangle with sides is',triArea)
+    </script>
+    <br>
+    <script>
+        function isLeapYear(year) {
+            if (year % 4 === 0) {
+                if (year % 100 === 0) {
+                    if (year % 400 === 0) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+        const yearToCheck = prompt("Enter a year: ");
+        const year = parseInt(yearToCheck);
+        if (isLeapYear(year)) {
+            console.log(year + " is a leap year.");
+        } else {
+            console.log(year + " is not a leap year.");
+        }
+    </script>
+    <br>
+    <script>
+        function isJanuary1stSunday(year) {
+            const date = new Date(year, 0, 1);
+            return date.getDay() === 0;
+        }
+        for (let year = 2014; year <= 2050; year++) {
+            if (isJanuary1stSunday(year)) {
+                console.log("January 1st, " + year + " is a Sunday.");
+            }
+        }
+    </script>
+    <br>
+    <script>
+        function daysUntilChristmas() {
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+            const christmasDate = new Date(currentYear, 11, 25); 
+            if (currentDate > christmasDate) {
+                christmasDate.setFullYear(currentYear + 1);
+            }
+            const timeDifference = christmasDate - currentDate;
+            const daysLeft = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            return daysLeft;
+        }
+        const daysLeft = daysUntilChristmas();
+        console.log("There are " + daysLeft + " days left until Christmas!");
+    </script>
+    <br>
+    <script>
+        function compareObjects(obj1, obj2) {
+            const keys1 = Object.keys(obj1);
+            const keys2 = Object.keys(obj2);
+            if (keys1.length !== keys2.length) {
+                return false;
+            }
+            for (let key of keys1) {
+                if (!obj2.hasOwnProperty(key)) {
+                    return false;
+                }
+                if (obj1[key] !== obj2[key]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        const objA = { name: "John", age: 30, city: "New York" };
+        const objB = { name: "John", age: 30, city: "New York" };
+        const objC = { name: "Alice", age: 25, city: "Los Angeles" };
+        const areEquivalentAB = compareObjects(objA, objB);
+        console.log("objA and objB are equivalent:", areEquivalentAB);
+        const areEquivalentAC = compareObjects(objA, objC);
+        console.log("objA and objC are equivalent:", areEquivalentAC); 
+    </script>
+    <br>
+    <script>
+        function sortStringAlphabetically(inputString) {
+            const charArray = inputString.split('');
+            const sortedArray = charArray.sort();
+            const sortedString = sortedArray.join('');
+            return sortedString;
+        }
+        const inputString = 'web development';
+        const sortedResult = sortStringAlphabetically(inputString);
+        console.log('Original String:', inputString);
+        console.log('Sorted String:', sortedResult);
+    </script>
+    <br>
+    <script>
+        function capitalizeWords(inString) {
+            const words = inString.split(' ');
+            const capitalizedWords = [];
+            for (const word of words) {
+                if (word.length > 0) {
+                    const capitalizedWord = word[0].toUpperCase() + word.slice(1).toLowerCase();
+                    capitalizedWords.push(capitalizedWord);
+                }
+            }
+            const resultString = capitalizedWords.join(' ');
+            return resultString;
+        }
+        const inString = 'the quick brown fox';
+        const capitalizedResult = capitalizeWords(inString);
+        console.log('Original String:', inString);
+        console.log('Capitalized String:', capitalizedResult);
+    </script>
+    <br>
+    <script>
+        function findSecondLowestAndGreatest(numbers) {
+            if (numbers.length < 2) {
+                return "Array should have at least two numbers.";
+            }
+            numbers.sort(function(a, b) {
+                return a - b;
+            });
+            const uniqueNumbers = [new Set(numbers)];
+            if (uniqueNumbers.length < 2) {
+                return "Array should have at least two unique numbers.";
+            }
+            const secondLowest = uniqueNumbers[1];
+            const secondGreatest = uniqueNumbers[uniqueNumbers.length - 2];
+            return `${secondLowest},${secondGreatest}`;
+        }
+        const numbersArray = [1, 2, 3, 4, 5];
+        const result = findSecondLowestAndGreatest(numbersArray);
+        console.log('Second Lowest and Second Greatest:', result); 
+    </script>
+    <script>
+        function calculator (a, b, op) {
+            switch (op) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    if (b == 0) {
+                        return "Division by zero is not allowed";
+                    }
+                    return a / b;
+                case '%':
+                    if (b == 0) {
+                        return "Modulus by zero is not allowed";
+                    }
+                    a % b;
+                default:
+                    return "Operator not recognized";
+            }
+        }
+        const a=prompt("Enter the first number(a):");
+        console.log("First number(a):",a);
+        const b=prompt("Enter the second number(b)");
+        console.log("Second number(b):", b);
+        const op=prompt("Enter the operator(+, -, *, /, %):");
+        const result1=calculator(parseFloat(a), parseFloat(b), op);
+        console.log("Result:", result1);
+    </script>
+</body>
+</html>

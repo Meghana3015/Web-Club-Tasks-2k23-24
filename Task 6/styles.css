@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #db92d0;
+    text-align: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    border: 4px solid rgb(245, 71, 71);
+    padding:20px;
+    max-width: 600px;
+    max-height: 800px;
+    box-shadow: 0 0 10px rgba(255, 1, 1, 0.252);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 40%;
+}
+
+form{
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+    width: 60%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold; 
+    display: flex;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+    width: 60%;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(245, 245, 245);
+    padding: 3px;
+}
+
+h2{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+p,a{
+    font-size: 18px;
+}
+
+button.container {
+    background-color: #f6f6f6;
+    color: #000000;
+    border-color: black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #4c059d;
+    margin: 5px;
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.link-space{
+    margin-right: 60px;
+}
